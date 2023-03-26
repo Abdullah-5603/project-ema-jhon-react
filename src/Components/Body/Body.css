@@ -1,0 +1,10 @@
+.body{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 15% 5%;
+}
+.shop-btn{
+    background-color:  salmon;
+    color: black;
+}
