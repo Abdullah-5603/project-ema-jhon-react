@@ -1,0 +1,24 @@
+.order-container{
+    margin-left: 10px;
+    border-radius: 10px;
+}
+.order-summary{
+    text-align: center;
+}
+.btns{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.clear-cart-btn{
+    background-color: rgb(194, 45, 45);
+    width: 100%;
+    margin-bottom: 10px;
+}
+.review-order-btn{
+    background-color: #ff9900;
+    width: 100%;
+    margin-bottom: 10px;
+}

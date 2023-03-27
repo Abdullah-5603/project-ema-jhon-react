@@ -38,6 +38,8 @@
 
 btn-cart {
     width: 50%;
+    position: absolute;
+    bottom: 0;
 }
 
 .btn-cart:hover {
