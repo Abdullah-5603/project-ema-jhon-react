@@ -2,9 +2,6 @@ const priceCalculator = (prices) =>{
     let totalPrice = prices.reduce((acc, curr) => acc + curr, 0);
     return totalPrice;
 }
-const GrandTotal = (price1, price2, price3 ) =>{
-    return price1 + price2 + price3;
-}
 
 
 const addToDb = id => {
@@ -49,6 +46,5 @@ export {
     removeFromDb,
     getShoppingCart,
     deleteShoppingCart,
-    priceCalculator,
-    GrandTotal
+    priceCalculator
 };
