@@ -1,10 +1,9 @@
 import React from 'react';
-// import { deleteShoppingCart, priceCalculator } from '../../utilities/fakedb';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons';
 import './OrderSummary.css'
 
-const OrderSummary = ({cart}) => {
+const OrderSummary = ({cart, clearCart}) => {
     // const totalPrices = cart.map(product => product.price);
     // const shippingCharges = cart.map(product => product.shipping);
     // const totalShippingCharge = priceCalculator(shippingCharges);
@@ -33,7 +32,7 @@ const OrderSummary = ({cart}) => {
             <p>Tax: {tax.toFixed(2)}$</p>
             <h4>Grand Total: {grandTotal.toFixed(2)}$</h4>
             <div className='btns'>
-                <button className='clear-cart-btn'>Clear Cart <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button>
+                <button onClick={clearCart} className='clear-cart-btn'>Clear Cart <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button>
                 <button className='review-order-btn'>Review Order 
                 <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
             </div>
