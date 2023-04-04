@@ -21,7 +21,35 @@
 .review-item-info p{
     margin: 0 10px;
 }
-.review-item-info h5{
+.review-item-info span{
+    color: orange;
+}
+.review-item-info button{
     margin: 0 10px;
-    margin-top: 5px;
+    padding: 10px;
+    background-color: rgba(235, 87, 87, 0.5);
+    color: #eb5757;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.name{
+    font-size: 17px;
+    font-weight: 600;
+}
+@media (max-width: 500px) {
+    .review-item{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+    }
+    .review-item img{
+        width: 190px;
+        height: 190px;
+    }
+    .review-item-info{
+        align-items: flex-end;
+        margin-bottom: 10px;
+    }
+
 }

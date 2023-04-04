@@ -8,15 +8,14 @@ const ReviewItem = ({product, handleDeleteFromCart}) => {
     return (
         <div className='review-item'>
             <img src={img} alt="" />
-            <div className='review-item-info ms-2'>
+            <div className='review-item-info'>
                 <div>
-                    <h5>{name}</h5>
-                    <p>quantity: <span className='text-warning'>{quantity}</span></p>
-                    <p>Price: <span className='text-warning'>{price} $</span></p>
+                    <p className='name'>{name}</p>
+                    <p>quantity: <span>{quantity}</span></p>
+                    <p>Price: <span>{price} $</span></p>
                 </div>
-                <button onClick={() => handleDeleteFromCart(id)}  
-                className='me-1 p-2 bg-danger border rounded text-white'>
-                    <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></button>
+                <button onClick={() => handleDeleteFromCart(id)}  >
+                <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></button>
             </div>
         </div>
     );

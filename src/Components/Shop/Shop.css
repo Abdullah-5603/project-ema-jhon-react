@@ -14,3 +14,35 @@
     height: 50vh;
     background-color: #ff9950;
 }
+.proceed-link{
+    text-decoration: none;
+}
+.review-order-btn{
+    width: 100%;
+    text-decoration: none;
+    background: #ff9900;
+    height: 40px;
+    font-size: 17px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 500px) {
+    .shop-container {
+      grid-template-columns: 2fr 1fr;
+    }
+    .products-container {
+        grid-template-columns: 1fr;
+        margin: 10px;
+    }
+    .cart-container{
+        margin-top: 10px;
+        width: 200px;
+        height: 55vh;
+    }
+  }
+  

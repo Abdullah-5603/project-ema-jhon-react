@@ -7,3 +7,15 @@
     background-color: #ff9950;
     height: 50vh;
 }
+@media (max-width: 500px) {
+    .review-container{
+        margin: 20px 10px;
+    }
+    .review-cart-container{
+        margin-top: 20px;
+        margin-right: 10px;
+        background-color: #ff9950;
+        height: 55vh;
+        width: 200px;
+    }
+}

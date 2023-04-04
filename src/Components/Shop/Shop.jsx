@@ -3,6 +3,9 @@ import Product from '../Products/Product';
 import OrderSummary from '../OrderSummary/OrderSummary'
 import './shop.css'
 import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Shop = () => {
     // const{name, quantity} = getShoppingCart;
@@ -65,7 +68,12 @@ const Shop = () => {
             <div className='cart-container'>
                 <OrderSummary 
                 cart={cart} clearCart={clearCart}
-                ></OrderSummary>
+                >
+                <Link className='proceed-link' to='/orders'>
+                <button className='review-order-btn'>Review Order 
+                <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
+                </Link>
+                </OrderSummary>
             </div>
         </div>
     );
