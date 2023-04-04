@@ -3,7 +3,6 @@ const priceCalculator = (prices) =>{
     return totalPrice;
 }
 
-
 const addToDb = id => {
     let shoppingCart = getShoppingCart();
     // add quantity

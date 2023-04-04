@@ -1,0 +1,27 @@
+.review-item{
+    display: flex;
+    width: 571px;
+    border: 1px solid #95a0a7;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+.review-item img{
+    width: 90px;
+    height: 90px;
+    border: none;
+    margin: 5px;
+    border-radius: 10px;
+}
+.review-item-info{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+.review-item-info p{
+    margin: 0 10px;
+}
+.review-item-info h5{
+    margin: 0 10px;
+    margin-top: 5px;
+}

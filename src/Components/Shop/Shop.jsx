@@ -42,7 +42,6 @@ const Shop = () => {
             newCart = [...remaining, product];
         }
 
-
         // const newCart = [...cart, product];
         setCart(newCart);
         addToDb(product.id)
