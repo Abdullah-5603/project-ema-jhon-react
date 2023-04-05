@@ -32,12 +32,12 @@ const Orders = () => {
                     ></ReviewItem>)
                 }            
             </div>
-            <div className='review-cart-container'>
+            <div className='cart-container'>
                 <OrderSummary 
                 clearCart={clearCart}
                 cart={cart}>
                 <Link className='proceed-link' to='/checkOut'>
-                <button className='review-order-btn'>Proceed to check Out
+                <button className='review-order-btn'>Proceed checkout
                 <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
                 </Link>
                 </OrderSummary>

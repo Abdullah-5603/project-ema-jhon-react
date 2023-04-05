@@ -22,9 +22,12 @@
     border-radius: 5px;
     color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
-@media (max-width: 500px) {
-    
+@media (max-width: 568px) {
+    .clear-cart-btn{
+        height: 35px;
+        font-size: 15px;
+    }
 }

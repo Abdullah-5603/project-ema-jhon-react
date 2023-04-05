@@ -37,7 +37,7 @@
     font-size: 17px;
     font-weight: 600;
 }
-@media (max-width: 500px) {
+@media (max-width: 568px) {
     .review-item{
         display: flex;
         flex-direction: column;

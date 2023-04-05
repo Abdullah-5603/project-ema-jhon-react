@@ -1,5 +1,6 @@
 .header{
     height: 80px;
+    width: auto;
     background-color:#1C2B35;
     display: flex;
     justify-content: space-between;
@@ -16,4 +17,18 @@ nav.header a{
 
 nav.header a:hover{
     color: goldenrod;
+}
+@media (max-width: 568px) {
+    .header{
+        height: 50px;
+        padding-left: 20px;
+        padding-right: 30px;
+    }
+    .header img{
+        width: 80px;
+    }
+    nav.header a{
+        margin-left: 20px;
+        font-size: 13px;
+    }
 }
