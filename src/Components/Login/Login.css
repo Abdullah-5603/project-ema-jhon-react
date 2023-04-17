@@ -22,6 +22,7 @@
     font-size: 15px;
     margin: 10px 0;
     padding: 10px;
+    width: 80%;
 }
 .submit{
     background-color: rgba(255, 153, 0, 0.3);
@@ -32,6 +33,11 @@
     padding: 10px;
     font-size: 20px;
     cursor: pointer;
+}
+.password-show-field{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 span{
     margin: 0 8px;

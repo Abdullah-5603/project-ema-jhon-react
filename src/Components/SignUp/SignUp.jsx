@@ -5,45 +5,45 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 const SignUp = () => {
     const [error, setError] = useState('');
-    const {createUser, googleSignIn} = useContext(AuthContext);
+    const { createUser, googleSignIn } = useContext(AuthContext);
 
-    const handleSubmit = (event) =>{
+    const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        const confirmPassword = form.ConfirmPassword.value; 
+        const confirmPassword = form.ConfirmPassword.value;
 
         setError('')
-        if(password !== confirmPassword){
+        if (password !== confirmPassword) {
             setError("Password didn't match")
             return;
-        } else if(password.length < 6){
+        } else if (password.length < 6) {
             setError('Password should be 6 Characters or longer')
             return;
         }
         createUser(email, password)
-        .then(result =>{
-            const loggedUser = result.user;
-            form.reset();
-            console.log('sign up successfully')
-        })
-        .catch(error =>{
-            console.log(error.message)
-            setError(error.message)
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                form.reset();
+                console.log('sign up successfully')
+            })
+            .catch(error => {
+                console.log(error.message)
+                setError(error.message)
+            })
 
     }
-    const handleGoogleSignIn = () =>{
+    const handleGoogleSignIn = () => {
         googleSignIn()
-        .then(result =>{
-            const loggedUser = result.user;
-            console.log('sign in successfully')
-        })
-        .catch(error =>{
-            console.log(error.message)
-            setError(error.message)
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log('sign in successfully')
+            })
+            .catch(error => {
+                console.log(error.message)
+                setError(error.message)
+            })
     }
     return (
         <div>
@@ -64,7 +64,7 @@ const SignUp = () => {
                             <input type="password" name="ConfirmPassword" placeholder='Confirm password' className='password-field' required /> {/* Use "ConfirmPassword" as per attribute name */}
                         </div>
                         <p className='text-error'>{error}</p>
-                        <Link to='/'><input className='submit' type="submit" value="Sign Up" /></Link>
+                        <input className='submit' type="submit" value="Sign Up" />
                         <p>Already have an Account?<Link to='/login'><span>Please Login</span></Link></p>
                         <button onClick={handleGoogleSignIn} className='google-login-btn'>Continue with Google</button>
                     </form>

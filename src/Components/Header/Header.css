@@ -52,4 +52,12 @@ nav.header a:hover{
         margin-left: 20px;
         font-size: 13px;
     }
+    #sign-out{
+        width: 65px;
+        padding: 5px;
+        font-size: 12px;
+    }
+    .nav-link div{
+        flex-direction: column;
+    }
 }
