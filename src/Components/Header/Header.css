@@ -18,6 +18,27 @@ nav.header a{
 nav.header a:hover{
     color: goldenrod;
 }
+.nav-link{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-link div{
+    display: flex;
+    justify-content: space-between;
+}
+.email-text{
+    margin-left: 10px;
+    color: white;
+    margin: 0 20px;
+}
+#sign-out{
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #445058;
+
+}
 @media (max-width: 568px) {
     .header{
         height: 50px;

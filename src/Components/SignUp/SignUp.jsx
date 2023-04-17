@@ -5,19 +5,22 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 const SignUp = () => {
     const [error, setError] = useState('');
-    const {createUser} = useContext(AuthContext);
+    const {createUser, googleSignIn} = useContext(AuthContext);
 
     const handleSubmit = (event) =>{
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        const confirmPassword = form.ConfirmPassword.value; // Corrected case to "ConfirmPassword"
+        const confirmPassword = form.ConfirmPassword.value; 
 
+        setError('')
         if(password !== confirmPassword){
             setError("Password didn't match")
+            return;
         } else if(password.length < 6){
             setError('Password should be 6 Characters or longer')
+            return;
         }
         createUser(email, password)
         .then(result =>{
@@ -27,10 +30,21 @@ const SignUp = () => {
         })
         .catch(error =>{
             console.log(error.message)
+            setError(error.message)
         })
 
     }
-
+    const handleGoogleSignIn = () =>{
+        googleSignIn()
+        .then(result =>{
+            const loggedUser = result.user;
+            console.log('sign in successfully')
+        })
+        .catch(error =>{
+            console.log(error.message)
+            setError(error.message)
+        })
+    }
     return (
         <div>
             <div className='log-in'>
@@ -50,9 +64,9 @@ const SignUp = () => {
                             <input type="password" name="ConfirmPassword" placeholder='Confirm password' className='password-field' required /> {/* Use "ConfirmPassword" as per attribute name */}
                         </div>
                         <p className='text-error'>{error}</p>
-                        <input className='submit' type="submit" value="Sign Up" />
+                        <Link to='/'><input className='submit' type="submit" value="Sign Up" /></Link>
                         <p>Already have an Account?<Link to='/login'><span>Please Login</span></Link></p>
-                        <button className='google-login-btn'>Continue with Google</button>
+                        <button onClick={handleGoogleSignIn} className='google-login-btn'>Continue with Google</button>
                     </form>
                 </div>
             </div>
