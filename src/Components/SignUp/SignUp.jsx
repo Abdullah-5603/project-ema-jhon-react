@@ -2,8 +2,11 @@ import React, { useContext, useState } from 'react';
 import './SignUp.css'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const SignUp = () => {
+    const [show, setShow] = useState(false)
     const [error, setError] = useState('');
     const { createUser, googleSignIn } = useContext(AuthContext);
 
@@ -61,7 +64,14 @@ const SignUp = () => {
                         </div>
                         <div className="password">
                             <label htmlFor="ConfirmPassword">Confirm Password</label> {/* Updated htmlFor attribute */}
-                            <input type="password" name="ConfirmPassword" placeholder='Confirm password' className='password-field' required /> {/* Use "ConfirmPassword" as per attribute name */}
+                            <div className="password-show-field">
+                        <input type={show ? 'text' : 'password'} name="password" id='password' placeholder='Your password' className='password-field' required />
+                        {
+                            show ? 
+                            <FontAwesomeIcon onClick={() => setShow(!show)} icon={faEyeSlash} />
+                            : <FontAwesomeIcon onClick={() => setShow(!show)} icon={faEye}></FontAwesomeIcon>
+                        }
+                        </div>
                         </div>
                         <p className='text-error'>{error}</p>
                         <input className='submit' type="submit" value="Sign Up" />

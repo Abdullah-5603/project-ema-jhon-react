@@ -1,7 +1,7 @@
-.header{
+.header {
     height: 80px;
     width: auto;
-    background-color:#1C2B35;
+    background-color: #1C2B35;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,29 +9,37 @@
     padding-right: 100px;
 }
 
-nav.header a{
+.mobile-header {
+    display: none;
+}
+
+.nav-link a {
     text-decoration: none;
     color: white;
     margin-left: 30px;
 }
 
-nav.header a:hover{
+.nav-link a:hover {
     color: goldenrod;
 }
-.nav-link{
+
+.nav-link {
     display: flex;
     justify-content: space-between;
 }
-.nav-link div{
+
+.nav-link div {
     display: flex;
     justify-content: space-between;
 }
-.email-text{
+
+.email-text {
     margin-left: 10px;
     color: white;
     margin: 0 20px;
 }
-#sign-out{
+
+#sign-out {
     padding: 8px;
     font-size: 15px;
     border: none;
@@ -39,25 +47,74 @@ nav.header a:hover{
     background-color: #445058;
 
 }
+
 @media (max-width: 568px) {
-    .header{
+    .header {
         height: 50px;
         padding-left: 20px;
         padding-right: 30px;
     }
-    .header img{
+
+    .header img {
+        display: none;
+    }
+    .mobile-header img{
+        margin-left: -40%;
+        display: block;
         width: 80px;
     }
-    nav.header a{
-        margin-left: 20px;
-        font-size: 13px;
+
+    .nav-link {
+        display: none;
     }
-    #sign-out{
+    #sign-out {
+        display: none;
         width: 65px;
         padding: 5px;
         font-size: 12px;
     }
-    .nav-link div{
-        flex-direction: column;
+
+    .mobile-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
     }
+
+    .icon {
+        color: white;
+    }
+
+    .toggle {
+        position: absolute;
+    }
+    .mobile-nav-icon{
+        margin: 10px;
+    }
+    .mobile-nav-link {
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10%;
+        margin-left: -110%;
+        background-color: white;
+        animation: slideIn 0.7s forwards;
+      }
+      
+      @keyframes slideIn {
+        from {
+          margin-left: -110%;
+        }
+        to {
+          margin-left: -20%;
+        }
+      }
+      
+      
+      
+    .mobile-nav-link a {
+        display: flex;
+        flex-direction: column;
+        color: black;
+        font-weight: bold;
+    }
+
 }

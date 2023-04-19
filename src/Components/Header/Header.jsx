@@ -1,33 +1,67 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Header.css'
 import logo from '../../images/Logo.svg'
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
-    const {user, signOutUser} = useContext(AuthContext);
+    const [open, setOpen] = useState(false);
+    const { user, signOutUser } = useContext(AuthContext);
+    const location = useLocation();
 
-    const handleSignOut = () =>{
+    const handleSignOut = () => {
         signOutUser()
-        .then(()=>{})
-        .catch(error =>{
-            console.log(error.message)
-        })
+            .then(() => { })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
-
+    const handleOpen = () => {
+        setOpen(!open);
+    }
     return (
-        <nav className='header'>
-            <img src={logo} alt="" />
-            <div className='nav-link'>
-                <Link to="/">Shop</Link>
-                <Link to="/orders">Order</Link>
-                <Link to="/inventory">Inventory</Link>
-                <Link to="/login">Login</Link>
-                {
-                    user && <div><p className='email-text'>{user.email}</p> <button onClick={handleSignOut} id='sign-out'>Sign Out</button></div>
-                }
-            </div>
-        </nav>
+        <>
+            <nav className='header'>
+                <img src={logo} alt="" />
+                <div className='nav-link'>
+                    <Link to="/">Shop</Link>
+                    <Link to="/orders">Order</Link>
+                    <Link to="/inventory">Inventory</Link>
+                    <Link to="/login">Login</Link>
+                    {
+                        user && <div><p className='email-text'>{user.email}</p> <button onClick={handleSignOut} id='sign-out'>Sign Out</button></div>
+                    }
+                </div>
+                <div className='mobile-header'>
+                    <div className='toggler'>
+                    <span onClick={handleOpen} className='toggle'>
+                        {
+                            open ? <FontAwesomeIcon className='icon' icon={faXmark} /> : <FontAwesomeIcon className='icon' icon={faBars} />
+                        }
+                        {
+                            open && (
+                                <div className="mobile-nav-link">
+                                    <Link onClick={handleOpen} to="/">Shop</Link>
+                                    <Link onClick={handleOpen} to="/orders">Order</Link>
+                                    <Link onClick={handleOpen} to="/inventory">Inventory</Link>
+                                    <Link onClick={handleOpen} to="/login">Login</Link>
+                                </div>
+                            )
+                        }
+                    </span>
+                    </div>
+                    <img src={logo} alt="" />
+                    <div>
+                    {
+                        user && <div><p className='email-text'>{user.email}</p> <button onClick={handleSignOut} id='sign-out'>Sign Out</button></div>
+                    }
+                    </div>
+                </div>
+            </nav>
+        </>
     );
 };
 
