@@ -1,6 +1,5 @@
 .header {
     height: 80px;
-    width: auto;
     background-color: #1C2B35;
     display: flex;
     justify-content: space-between;
@@ -50,6 +49,7 @@
 
 @media (max-width: 568px) {
     .header {
+        margin-right: 0;
         height: 50px;
         padding-left: 20px;
         padding-right: 30px;
@@ -59,9 +59,14 @@
         display: none;
     }
     .mobile-header img{
-        margin-left: -40%;
+        margin-left: -20%;
         display: block;
         width: 80px;
+    }
+    .user-profile{
+        display: flex;
+        justify-content: flex-end;
+        width: 40%;
     }
 
     .nav-link {
@@ -69,9 +74,6 @@
     }
     #sign-out {
         display: none;
-        width: 65px;
-        padding: 5px;
-        font-size: 12px;
     }
 
     .mobile-header {
@@ -107,9 +109,6 @@
           margin-left: -20%;
         }
       }
-      
-      
-      
     .mobile-nav-link a {
         display: flex;
         flex-direction: column;
