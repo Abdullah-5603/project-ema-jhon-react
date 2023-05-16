@@ -30,6 +30,19 @@
     justify-content: space-around;
     align-items: center;
 }
+.pagination{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.pagination button{
+    padding: 10px;
+    margin-right: 20px;
+}
+.active{
+    background-color: black;
+    color: white;
+}
+
 @media (max-width: 568px) {
     .shop-container {
       grid-template-columns: 2fr 1fr;

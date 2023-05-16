@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Shop from './Components/Shop/shop'
 import Home from './Components/Layout/Home'
 import Orders from './Components/Orders/Orders'
 import Inventory from './Components/Inventory/Inventory'
@@ -12,6 +11,7 @@ import CheckOut from './Components/CheckOut/CheckOut';
 import SignUp from './Components/SignUp/SignUp';
 import AuthProvider from './Components/Provider/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Shop from './Components/Shop/Shop';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +20,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Shop></Shop>
+        element: <Shop></Shop>,
+        loader: () => fetch('http://localhost:3000/totalProducts')
       },
       {
         path: 'orders',
